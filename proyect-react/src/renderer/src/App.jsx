@@ -5,6 +5,8 @@ import CreateView from "./components/CreateView";
 import CreateElement from "./components/CreateElement";
 import EditView from './components/EditView';
 
+// import "https://fonts.googleapis.com/css2?family=Anton&family=Nunito:ital,wght@0,700;1,700&display=swap"
+
 export default function App() {
     // Estados principales
     const [tasks, setTasks] = useState([]); // Lista actual de tareas

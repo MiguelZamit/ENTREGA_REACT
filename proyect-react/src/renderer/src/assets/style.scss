@@ -1,23 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Nunito:ital,wght@0,700;1,700&display=swap');
 .background {
-    background: linear-gradient(45deg, #4facfe, #8f94fb);
-    min-height: 100vh;
+    background: linear-gradient(45deg, grey, #8f94fb);
+    
     margin: 0;
     color: white;
     font-family: Arial, sans-serif;
 }
 
+// Este es para las vistas
 #container {
-    background: linear-gradient(45deg, #4facfe, #8f94fb);
-    min-height: 100vh;
-    margin: 0;
-    color: white;
-    font-family: Arial, sans-serif;
+    background: linear-gradient(90deg, black, lightgrey);
 }
 
-h1 {
 
-    font-family: 'Times New Roman', Times, serif;
-    text-align: center;
+.text {
+
+    text-align: center !important;
+    font-size: xx-large !important;
+    font-family: "Anton" , sans-serif !important;
+    margin-bottom: -2px !important;
+    color: transparent;
+    background-image: linear-gradient(20deg, lightgrey, black);
+    background-clip: text;
+    font-style: italic;
+    
 
 }
 
@@ -27,13 +33,30 @@ h1 {
     
 }
 
+
+#createButons{
+
+    gap: 20px;
+
+}
+
+.acss-ozo177{
+
+    padding: 6px !important;
+
+}
+
 #contents{
 
-    background-color: white;
-    color: black;
     width: 350px;
     border: solid 2px;
     padding: 5px;
+
+}
+
+form{
+
+width: 500px;
 
 }
 
@@ -109,8 +132,6 @@ small{
     padding-left: 10px;
 
 }
-
-
 
 
 @import "../../.././../node_modules/bootstrap/scss/bootstrap.scss"

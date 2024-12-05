@@ -89,128 +89,88 @@ export default function CreateView({ tasks, setTasks, setFilteredTasks, setIds, 
     return (
         <>
 
-            <form action="" onSubmit={handleCreateTask}>
+            <div className="d-flex justify-content-center align-items-center">
 
-                <div id="container">
-                    <h1 className="title">This is the creation view</h1>
-
-                    <div className="d-flex flex-column container-fluid align-items-center justify-content-center " id="contents" >
-
-                        <label>Title</label>
-
-                        <div className="iptTitle">
-                            <input
-                                type="text"
-
-                                id="iptTitle"
-                                name="title"
-                                placeholder="Example: Clean the car..."
-                                value={formValues.title}
-                                onChange={handleInputChange}
-                                required
-                            />
-
-                        </div>
-
-
-                        <label>Description</label>
-                        <div className="mb-3">
-
-                            <textarea
-                                id="iptDescription"
-                                name="description"
-                                placeholder="Write anything you want..."
-                                value={formValues.description}
-                                onChange={handleInputChange}
-                            ></textarea>
-                        </div>
-
-                        <label>Status</label>
-                        <div className="mb-3">
-                            <select
-                                name="status"
-                                id="iptStatus"
-                                value={formValues.status}
-                                onChange={handleInputChange}
-                                required
-                            >
-                                <option value="Pending">Pending</option>
-                                <option value="In Progress">In Progress</option>
-                                <option value="Completed">Completed</option>
-                                <option value="Canceled">Canceled</option>
-                            </select>
-
-                        </div>
-
-                        <label>Deadline</label>
-                        <div className="mb-3 form-check">
-
-                            <input
-                                type="date"
-                                id="iptDeadline"
-                                name="deadline"
-                                value={formValues.deadline}
-                                onChange={handleInputChange}
-                            />
-                        </div>
-
-                        <div className="d-flex align-items-center justify-content-center mb-2">
-                            <button type="submit" className="btn btn-primary">
-                                Submit
-                            </button>
-                        </div>
-
-                        <div className="d-flex align-items-center justify-content-center">
-                            <button type="button" className="btn btn-primary" onClick={handleDiscard}>
-                                Discard
-                            </button>
-                        </div>
-
-                    </div>
-
-
-                </div>
-            </form>
-
-
-
-
-            {/* <div id="con"></div>
-            <h1>This is the creation view</h1>
-
-            <div className="d-flex container-fluid align-items-center justify-content-center form-validation" id="container">
-                <form className="m-5" id="login" >
-                    <div className="input-group mb-3">
-                        <div className="form-floating">
-                            <input
-                                type="text"
-                                className="form-control"
-                                id="iptTitle"
-                                name="title"
-                                placeholder="Example: Clean the car..."
-                                value={formValues.title}
-                                onChange={handleInputChange}
-                                required
-                            />
-                            <label>Title</label>
-                        </div>
-
-                        <div className="form-floating">
-                            
-                        </div>
-
-                        
-                        <label>Status</label>
-
-                        
-                        <label>Deadline</label>
-                    </div>
-
+                <form action="" onSubmit={handleCreateTask}>
                     
+                        <p className="text"> Creation Wiew</p>
+
+                        <div id="contents" >
+
+                            <label>Title</label>
+
+                            <div className="iptTitle">
+
+                                <input
+                                    type="text"
+                                    id="iptTitle"
+                                    name="title"
+                                    placeholder="Example: Clean the car..."
+                                    value={formValues.title}
+                                    onChange={handleInputChange}
+                                    required
+                                />
+
+                            </div>
+
+                            <label>Description</label>
+                            <div className="mb-3">
+
+                                <textarea
+                                    id="iptDescription"
+                                    name="description"
+                                    placeholder="Write anything you want..."
+                                    value={formValues.description}
+                                    onChange={handleInputChange}
+                                ></textarea>
+                            </div>
+
+                            <label>Status</label>
+                            <div className="mb-3">
+                                <select
+                                    name="status"
+                                    id="iptStatus"
+                                    value={formValues.status}
+                                    onChange={handleInputChange}
+                                    required
+                                >
+                                    <option value="Pending">Pending</option>
+                                    <option value="In Progress">In Progress</option>
+                                    <option value="Completed">Completed</option>
+                                    <option value="Canceled">Canceled</option>
+                                </select>
+
+                            </div>
+
+
+                            <label>Deadline</label>
+                            <div className="mb-3 ">
+
+                                <input
+                                    type="date"
+                                    id="iptDeadline"
+                                    name="deadline"
+                                    value={formValues.deadline}
+                                    onChange={handleInputChange}
+                                />
+                            </div>
+
+                            <div className="d-flex align-items-center justify-content-center mb-2" id="createButons">
+                                <button type="submit" className="btn btn-primary">
+                                    Submit
+                                </button>
+
+                                <button type="button" className="btn btn-primary" onClick={handleDiscard}>
+                                    Discard
+                                </button>
+                            </div>
+
+                        </div>
+
                 </form>
             </div>
 
-             */}
+
         </>
     );
 }

@@ -116,7 +116,6 @@ ipcMain.handle('openConfirmationDialog', async (event, title, message) => {
   return result.response === 0;
 })
 
-ipcMain
 
 ipcMain.handle('openEditConfirmationDialog', async (event, message) => {
 

@@ -10,7 +10,7 @@ export default function TaskItem({ task, index, handleCheckboxChange, handleDele
     const useStyle = createStyles(({ token }) => ({
         "my-modal-body": {
             background: token["blue-1"],
-            padding: token.paddingXXS, // No funciona lo del padding
+            padding: "32px", // No funciona lo del padding
         },
         "my-modal-mask": {
             boxShadow: `inset 0 0 15px #fff`,
@@ -21,6 +21,7 @@ export default function TaskItem({ task, index, handleCheckboxChange, handleDele
         "my-modal-content": {
             border: "1px solid #333",
         },
+        
     }));
 
     const [isModalOpen, setIsModalOpen] = useState(false); // Simplificar el estado a un booleano

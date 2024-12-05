@@ -1,6 +1,8 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
+import "../assets/style.css"
+
 export default function EditView({ tasks, setTasks, handleDeleteEdit, setFilteredTasks }) {
     const navigate = useNavigate();
     const { itemId } = useParams();
@@ -13,8 +15,7 @@ export default function EditView({ tasks, setTasks, handleDeleteEdit, setFiltere
         deadline: "",
     });
 
-    const [unsavedChanges, setUnsavedChanges] = useState(false); // Cambiar la variable 'change' a un estado
-
+    const [unsavedChanges, setUnsavedChanges] = useState(false); 
 
     // Precargar los datos de la tarea cuando se monta el componente
     useEffect(() => {
@@ -35,7 +36,7 @@ export default function EditView({ tasks, setTasks, handleDeleteEdit, setFiltere
         const newStatus = document.getElementById("iptStatus").value;
         const newDeadline = document.getElementById("iptDeadline").value;
 
-        // Crear el objeto actualizado
+        
         const updatedTask = {
             name: newTitle,
             description: newDescription,
@@ -46,20 +47,20 @@ export default function EditView({ tasks, setTasks, handleDeleteEdit, setFiltere
             date: new Date().toISOString(),
         };
 
-        // Actualizar la lista de tareas
+        
         const taskListUpdated = tasks.map((task) =>
             task.id === itemIdToNumeric ? updatedTask : task
         );
 
         setTasks(taskListUpdated);
-        setFilteredTasks(taskListUpdated); // Actualiza las tareas filtradas
+        setFilteredTasks(taskListUpdated); 
 
-        // Actualizar en la base de datos
+        
         window.api.updateTask(updatedTask);
 
         console.log("Tarea actualizada:", updatedTask);
 
-        // Navegar de vuelta al inicio
+       
         navigate("/");
     }
 
@@ -67,12 +68,12 @@ export default function EditView({ tasks, setTasks, handleDeleteEdit, setFiltere
         const taskToDelete = tasks.find((task) => task.id === itemIdToNumeric);
 
         console.log(itemIdToNumeric);
-        await handleDeleteEdit(itemIdToNumeric); // Llamada para eliminar la tarea
+        await handleDeleteEdit(itemIdToNumeric); 
 
         window.api.deleteTask(taskToDelete);
         console.log("En teoría borrado de la base de datos");
 
-        navigate("/"); // Redirigir al inicio
+        navigate("/"); 
     }
 
 
@@ -87,13 +88,6 @@ export default function EditView({ tasks, setTasks, handleDeleteEdit, setFiltere
     function handleChangeDescription(e) {
 
         setTaskDetails({ ...taskDetails, description: e.target.value })
-        unsavedChange()
-
-    }
-
-    function handleChangeStatus(e) {
-
-        setTaskDetails({ ...taskDetails, status: e.target.value })
         unsavedChange()
 
     }
@@ -136,24 +130,24 @@ export default function EditView({ tasks, setTasks, handleDeleteEdit, setFiltere
             setUnsavedChanges(false)
         }
 
-
     }
 
     return (
         <>
-            <div id="container" class="d-flex flex-column align-items-center justify-content-center">
-                <h1>This is the edit view with the element number {itemId}</h1>
+
+            <div id="container">
                 
+                <div className="d-flex flex-column align-items-center justify-content-center vh-100">
+
                     <form>
-
-
+                    <p className="text">Edit view with the element number {itemId}</p>
                         <div className="d-flex flex-column container-fluid align-items-center justify-content-center " id="contents" >
 
                             <label>Title</label>
                             <div>
                                 <input
                                     type="text"
-                                    class="form-control"
+                                    className="form-control"
                                     id="iptTitle"
                                     name="title"
                                     placeholder="Example: Clean the car..."
@@ -166,7 +160,7 @@ export default function EditView({ tasks, setTasks, handleDeleteEdit, setFiltere
 
 
                             <label>Description</label>
-                            <div class="form-floating">
+                            <div className="form-floating">
                                 <textarea
                                     id="iptDescription"
                                     name="description"
@@ -201,7 +195,7 @@ export default function EditView({ tasks, setTasks, handleDeleteEdit, setFiltere
                                 onChange={(e) => handleChangeDeadline(e)}
                             />
 
-                            <div class="d-flex align-items-center m-2">
+                            <div className="d-flex align-items-center m-2">
 
                                 <button type="button" onClick={handleDeleteAndExit} className="btn btn-danger me-2">Delete</button>
                                 <button type="button" onClick={handleSave} className="btn btn-success me-2">Save</button>
@@ -212,7 +206,10 @@ export default function EditView({ tasks, setTasks, handleDeleteEdit, setFiltere
                         </div>
 
                     </form>
+                </div>
             </div>
+
+
 
         </>
     );
